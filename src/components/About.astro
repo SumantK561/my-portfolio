@@ -1,0 +1,45 @@
+---
+const stats = [
+  { value: "4+",    label: "Years of experience"   },
+  { value: "44M+",  label: "Records processed"      },
+  { value: "3",     label: "Cloud platforms"        },
+  { value: "E2E",   label: "Pipeline ownership"     },
+];
+---
+
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-label">About me</p>
+        <h2 class="section-title">I build data systems<br />that scale.</h2>
+
+        <p>
+          I'm a Software and Data Engineer with 4+ years of experience across backend development,
+          data engineering, databases, cloud platforms and application delivery. I work across
+          the full data stack — from API ingestion and ETL pipelines to data modelling,
+          search, and end-user products.
+        </p>
+        <p>
+          My core stack is Python, SQL, dbt, Snowflake, Databricks and AWS, with hands-on
+          experience in FastAPI, Elasticsearch, Docker, Terraform and React. I care about
+          data quality, pipeline reliability and making data genuinely useful to the people
+          who depend on it.
+        </p>
+        <p>
+          Outside of work I enjoy exploring public datasets, shipping side projects, and
+          occasionally breaking things in the cloud in the name of learning.
+        </p>
+      </div>
+
+      <div class="about-stats">
+        {stats.map(s => (
+          <div class="stat-card">
+            <div class="stat-value">{s.value}</div>
+            <div class="stat-label">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

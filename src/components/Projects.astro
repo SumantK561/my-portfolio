@@ -1,0 +1,89 @@
+---
+const projects = [
+  {
+    featured: true,
+    icon: "🏭",
+    title: "Udyam MSME Directory",
+    badge: "Open Source",
+    desc: "End-to-end pipeline extracting 44M+ MSME records from India's Udyam registration portal across 36 states. Built a full star schema in Snowflake (dbt), orchestrated bi-weekly incremental loads with Apache Airflow, and shipped a public search and analytics web app.",
+    tags: ["Python", "dbt", "Snowflake", "Airflow", "FastAPI", "AWS S3", "EC2", "Cloudflare"],
+    links: [
+      { label: "Live site", href: "https://msme.sumantk.in",                                      icon: "↗" },
+      { label: "dbt docs",  href: "https://dbt.sumantk.in",                                       icon: "↗" },
+      { label: "GitHub",    href: "https://github.com/SumantK561/udhyam_msme_extractor",           icon: "⌥" },
+    ],
+  },
+  {
+    featured: false,
+    icon: "🔗",
+    title: "Supplier Data Engineering Platform",
+    badge: "Work",
+    desc: "Bronze–Silver–Gold transformation workflows using dbt and Snowflake. Built ingestion, transformation and validation pipelines for supplier datasets at scale, with Databricks for large-scale analytical processing.",
+    tags: ["dbt", "Snowflake", "Databricks", "PySpark", "SQL"],
+    links: [],
+  },
+  {
+    featured: false,
+    icon: "🔍",
+    title: "Supplier Search & Matching Platform",
+    badge: "Work",
+    desc: "Backend search and matching services across supplier name, address, city and state using FastAPI and Elasticsearch. Explored semantic-search approaches for entity resolution and deduplication at scale.",
+    tags: ["FastAPI", "Python", "SQL", "Elasticsearch", "Semantic Search", "NLP"],
+    links: [],
+  },
+  {
+    featured: false,
+    icon: "🌿",
+    title: "ESG Analytics & AI Application",
+    badge: "Work",
+    desc: "Analytics and AI-assisted functionality combining a FastAPI backend, React dashboards and NLP-powered features. Contributed to ESG data processing, visualisation and AI-enabled reporting workflows.",
+    tags: ["Python", "FastAPI", "React", "NLP", "LLM", "Data Viz"],
+    links: [],
+  },
+];
+---
+
+<section id="projects">
+  <div class="container">
+    <p class="section-label">Projects</p>
+    <h2 class="section-title">Things I've built</h2>
+    <p class="section-subtitle">
+      A mix of open-source side projects and production engineering work.
+    </p>
+
+    <div class="projects-grid">
+      {projects.map(p => (
+        <div class={`project-card${p.featured ? " featured" : ""}`}>
+          <div>
+            <div class="project-header">
+              <span class="project-icon">{p.icon}</span>
+              <span class="project-title">{p.title}</span>
+              {p.badge && <span class={`project-badge${p.badge === "Work" ? " badge-work" : ""}`}>{p.badge}</span>}
+            </div>
+            <p class="project-desc">{p.desc}</p>
+            <div class="timeline-tags" style="margin-top:0.75rem">
+              {p.tags.map(t => <span class="tag">{t}</span>)}
+            </div>
+          </div>
+          {p.links.length > 0 && (
+            <div class="project-links">
+              {p.links.map(l => (
+                <a href={l.href} target="_blank" rel="noopener" class="project-link">
+                  {l.icon} {l.label}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .badge-work {
+    color: var(--text-muted) !important;
+    background: var(--card-alt) !important;
+    border-color: var(--border) !important;
+  }
+</style>

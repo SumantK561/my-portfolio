@@ -1,0 +1,57 @@
+---
+const groups = [
+  {
+    title: "Languages",
+    pills: ["Python", "SQL", "JavaScript", "TypeScript", "PHP", "Bash"],
+  },
+  {
+    title: "Data Engineering",
+    pills: ["PySpark", "ETL/ELT", "dbt", "Databricks", "Snowflake", "AWS Glue", "Data Modeling", "Medallion Architecture"],
+  },
+  {
+    title: "Databases",
+    pills: ["MySQL", "SQL Server", "PostgreSQL", "MongoDB", "DynamoDB"],
+  },
+  {
+    title: "Backend & APIs",
+    pills: ["FastAPI", "Node.js", "Express.js", "REST APIs", "Authentication", "RBAC"],
+  },
+  {
+    title: "Cloud & DevOps",
+    pills: ["AWS", "GCP", "Docker", "Terraform", "GitHub Actions", "CI/CD", "EC2", "S3", "Lambda", "RDS", "IAM"],
+  },
+  {
+    title: "Search & AI",
+    pills: ["Elasticsearch", "Semantic Search", "Entity Matching", "RAG", "NLP", "LLM Applications"],
+  },
+  {
+    title: "Frontend",
+    pills: ["React.js", "Next.js", "Vue.js", "Tailwind CSS", "HTML", "CSS", "Astro"],
+  },
+  {
+    title: "Tooling",
+    pills: ["Git", "GitLab", "Linux", "nginx", "VS Code", "Cloudflare"],
+  },
+];
+---
+
+<section id="skills">
+  <div class="container">
+    <p class="section-label">Skills</p>
+    <h2 class="section-title">What I work with</h2>
+    <p class="section-subtitle">
+      My toolkit across the full stack — pipelines to products.
+    </p>
+
+    <div class="skills-grid">
+      {groups.map(g => (
+        <div class="skill-group">
+          <div class="skill-group-title">{g.title}</div>
+          <div class="skill-pills">
+            {g.pills.map(p => <span class="pill">{p}</span>)}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

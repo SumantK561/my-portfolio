@@ -1,0 +1,90 @@
+---
+const jobs = [
+  {
+    company: "CVM Solutions Pvt. Ltd. / Supplier.io",
+    role:    "Software Engineer — Data & DevOps",
+    period:  "Jun 2023 — Present",
+    location: "Hyderabad, Telangana",
+    bullets: [
+      "Design and develop Python/FastAPI backend services and data-driven applications supporting supplier data, search, analytics and order-management workflows.",
+      "Build and maintain ETL/ELT pipelines using Python, SQL, DBT and Snowflake for processing and transforming supplier datasets.",
+      "Implement data workflows following the Bronze–Silver–Gold Medallion Architecture.",
+      "Develop and maintain workflows involving Databricks, DBT and Snowflake for ingestion, transformation and validation.",
+      "Build supplier data-matching capabilities using Python-based matching and semantic-search approaches.",
+      "Contribute to ESG analytics, dashboards and AI-enabled applications using Python, FastAPI, React and NLP.",
+      "Work with AWS services including S3, EC2, RDS, IAM, Lambda and CloudWatch.",
+    ],
+    tags: ["Python", "FastAPI", "DBT", "Snowflake", "Databricks", "PySpark", "Elasticsearch", "AWS", "Docker", "React"],
+  },
+  {
+    company: "Hyscaler / Nettantra",
+    role:    "Software Engineer — Development & Implementation",
+    period:  "Jul 2022 — Jun 2023",
+    location: "Bhubaneswar, Odisha",
+    bullets: [
+      "Developed and maintained web applications and backend services using Python, Node.js, PHP, JavaScript and modern frontend technologies.",
+      "Designed and integrated REST APIs, database workflows and application-level business logic.",
+      "Worked with MySQL, SQL Server and MongoDB for application development and data processing.",
+      "Implemented and supported Elasticsearch-based transaction tracking and search capabilities.",
+      "Worked with AWS, Docker, Git and CI/CD workflows for application development and deployment.",
+    ],
+    tags: ["Python", "Node.js", "JavaScript", "React", "Next.js", "REST APIs", "Elasticsearch", "MySQL", "MongoDB", "AWS", "Docker"],
+  },
+];
+---
+
+<section id="experience">
+  <div class="container">
+    <p class="section-label">Experience</p>
+    <h2 class="section-title">Where I've worked</h2>
+    <p class="section-subtitle">
+      4+ years across data engineering, backend development, and cloud platforms.
+    </p>
+
+    <div class="timeline">
+      {jobs.map(job => (
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-company">{job.company}</span>
+            <span class="timeline-period">{job.period}</span>
+          </div>
+          <div class="timeline-role">{job.role}</div>
+          <p class="timeline-location">{job.location}</p>
+          <ul class="timeline-bullets">
+            {job.bullets.map(b => <li>{b}</li>)}
+          </ul>
+          <div class="timeline-tags">
+            {job.tags.map(t => <span class="tag">{t}</span>)}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline-location {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+  }
+  .timeline-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 0.75rem;
+  }
+  .timeline-bullets li {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    padding-left: 1rem;
+    position: relative;
+  }
+  .timeline-bullets li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+  }
+</style>
